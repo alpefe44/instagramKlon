@@ -39,7 +39,9 @@ const Post = () => {
                     </Animated.View>
                 </View>
                 <View style={styles.yorumBaslik}>
-                    <Icon name='heart' size={24} color={'black'}></Icon>
+                    <Icon name='hearto' size={24} color={'black'}></Icon>
+                    <Icon name="message1" size={24} color="black" />
+                    <Icon name="rocket1" size={24} color="black" />
                 </View>
             </View>
         </View>
@@ -52,12 +54,16 @@ const styles = StyleSheet.create({
         marginTop: 5
     },
     baslik: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginLeft:5,
+        marginVertical:5
     },
     yorumBaslik: {
         flexDirection: 'row',
-        gap: 5,
-        alignItems: 'center'
+        gap: 8,
+        alignItems: 'center',
+        marginLeft:5,
+        marginVertical:5
     },
     image: {
         height: height * .3,
