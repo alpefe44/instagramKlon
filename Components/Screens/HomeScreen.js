@@ -43,6 +43,7 @@ const HomeScreen = () => {
             </View>
 
             <Post></Post>
+            <Post></Post>
         </View >
     )
 }
