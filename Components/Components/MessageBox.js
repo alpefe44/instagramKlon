@@ -1,23 +1,27 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/AntDesign'
-
+import { useNavigation } from '@react-navigation/native'
 const MessageBox = () => {
+
+    const { navigate } = useNavigation();
     return (
-        <View style={styles.messageContainer}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 15 }}>
-                <View style={styles.profile}></View>
-                <View>
-                    <Text>Alp</Text>
+        <Pressable onPress={() => navigate("MessageDetail")}>
+            <View style={styles.messageContainer}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 15 }}>
+                    <View style={styles.profile}></View>
                     <View>
-                        <Text>Yeni Mesaj * 10d</Text>
+                        <Text>Alp</Text>
+                        <View>
+                            <Text>Yeni Mesaj * 10d</Text>
+                        </View>
                     </View>
                 </View>
+                <View>
+                    <Icon name='search1' size={24} color={'black'}></Icon>
+                </View>
             </View>
-            <View>
-                <Icon name='search1' size={24} color={'black'}></Icon>
-            </View>
-        </View>
+        </Pressable>
     )
 }
 

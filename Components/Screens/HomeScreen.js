@@ -6,9 +6,13 @@ import data from '../Data/index'
 import StoryCircle from '../Components/StoryCircle';
 import Post from '../Components/Post';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
 
     const { theme, setTheme } = useContext(MyContext);
+
+    const navigate = (name) => {
+        navigation.navigate(name)
+    }
 
     return (
         <View style={[styles.main, { backgroundColor: theme === 'dark' ? 'black' : 'white' }]}>
@@ -20,7 +24,10 @@ const HomeScreen = () => {
                 </Pressable>
                 <View style={styles.navRight}>
                     <Icon name={theme === 'light' ? 'heart' : 'hearto'} size={24} color={theme === 'dark' ? 'white' : 'black'}></Icon>
-                    <Icon name='message1' size={24} color={theme === 'dark' ? 'white' : 'black'}></Icon>
+                    <Pressable onPress={() => navigate("MessageScreen")}>
+                        <Icon name='message1' size={24} color={theme === 'dark' ? 'white' : 'black'}></Icon>
+                    </Pressable>
+
                 </View>
             </View>
 

@@ -1,15 +1,12 @@
-import { View, Text } from 'react-native'
 import React from 'react'
-import HomeScreen from './Components/Screens/HomeScreen'
 import { MainContext } from './Components/Context/MainContext'
-import MessageScreen from './Components/Screens/MessageScreen'
+import RootStack from './Components/Components/route/RootStack'
 
 const App = () => {
   return (
     <MainContext>
-      <MessageScreen></MessageScreen>
+      <RootStack></RootStack>
     </MainContext>
-
   )
 }
 

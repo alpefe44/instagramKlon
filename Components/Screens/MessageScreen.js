@@ -6,15 +6,29 @@ import Icon from 'react-native-vector-icons/AntDesign'
 import MessageBox from '../Components/MessageBox'
 
 
-const MessageScreen = () => {
+const MessageScreen = ({ navigation }) => {
+
+    const [showSearchContent, setShowSearchContent] = React.useState(true);
+
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+            title: 'Alp',
+            headerTitleAlign: 'center'
+        })
+    }, [navigation])
+
     return (
         <View style={styles.container}>
-            <View style={styles.textInput}>
-                <TextInput></TextInput>
-                <View style={styles.inTextInput}>
-                    <Icon name='search1' size={24} color={'black'}></Icon>
-                    <Text>Ara</Text>
-                </View>
+            <View style={styles.textInputContainer}>
+                <TextInput onFocus={() => setShowSearchContent(false)} onBlur={() => setShowSearchContent(true)} style={styles.textInput}></TextInput>
+                {
+                    showSearchContent &&
+                    <View style={styles.inTextInput}>
+                        <Icon name='search1' size={24} color={'black'}></Icon>
+                        <Text>Ara</Text>
+                    </View>
+                }
+
             </View>
 
             <View>
@@ -33,7 +47,7 @@ const MessageScreen = () => {
                     <Text>İstekler</Text>
                 </View>
             </View>
-            
+
             <MessageBox></MessageBox>
 
         </View>
@@ -52,16 +66,19 @@ const styles = StyleSheet.create({
         borderRadius: 18,
         height: 40,
         marginHorizontal: 15,
-        backgroundColor: 'gray',
+        backgroundColor: '#fff',
         position: 'relative',
         marginVertical: 10,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingHorizontal: 15
     },
     inTextInput: {
         position: 'absolute',
-        left: 10,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        left: 25,
+        top: 1,
+        bottom: 1
     },
     secondContainer: {
         marginTop: 15
@@ -71,8 +88,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginHorizontal: 5
     },
-   
-   
+
+
 })
 
 export default MessageScreen
