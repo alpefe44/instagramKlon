@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, Pressable, ScrollView, Button } from 'react-native'
 import React, { useContext } from 'react'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { MyContext } from '../Context/MainContext';
@@ -7,12 +7,12 @@ import StoryCircle from '../Components/StoryCircle';
 import Post from '../Components/Post';
 
 const HomeScreen = ({ navigation }) => {
-
     const { theme, setTheme } = useContext(MyContext);
 
     const navigate = (name) => {
         navigation.navigate(name)
     }
+
 
     return (
         <View style={[styles.main, { backgroundColor: theme === 'dark' ? 'black' : 'white' }]}>

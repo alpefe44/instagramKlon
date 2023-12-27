@@ -3,12 +3,13 @@ import React, { useContext } from 'react'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { UserContext } from '../Context/UserContext'
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 const ProfileHeader = () => {
 
     const { selectedImage, setSelectedImage } = useContext(UserContext)
-    const pickImageFromGallery = async() => {
+    const pickImageFromGallery = async () => {
         await launchImageLibrary(
             {
                 mediaType: 'photo',
@@ -31,7 +32,8 @@ const ProfileHeader = () => {
                             <View>
                                 <Icon name="camera" size={40}></Icon>
                             </View>
-                        </Pressable>) : <Image style = {{width:60 , height:60 , resizeMode:'cover' , borderRadius:40}} source={{ uri: selectedImage }}></Image>
+                        </Pressable>) :
+                        <Pressable onPress={() => pickImageFromGallery()}><Image style={{ width: 60, height: 60, resizeMode: 'cover', borderRadius: 40 }} source={{ uri: selectedImage }}></Image></Pressable>
                 }
 
             </View>
