@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeScreenStack from '../HomeScreenStack';
 import KesfetStack from '../KesfetStack';
 import Icon from 'react-native-vector-icons/AntDesign'
+import ProfileStack from '../ProfileStack';
 
 
 const Tab = createBottomTabNavigator();
@@ -21,10 +22,11 @@ const TabbarStack = () => {
                             <Icon name="home" size={32}></Icon>
                         )
                     },
-                    title : 'Home',
+                    title: 'Home',
                 }}
             ></Tab.Screen>
             <Tab.Screen name='TabKesfet' component={KesfetStack}></Tab.Screen>
+            <Tab.Screen name='TabProfile' component={ProfileStack}></Tab.Screen>
         </Tab.Navigator>
     )
 }
