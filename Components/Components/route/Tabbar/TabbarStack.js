@@ -25,8 +25,30 @@ const TabbarStack = () => {
                     title: 'Home',
                 }}
             ></Tab.Screen>
-            <Tab.Screen name='TabKesfet' component={KesfetStack}></Tab.Screen>
-            <Tab.Screen name='TabProfile' component={ProfileStack}></Tab.Screen>
+            <Tab.Screen
+                name='TabKesfet'
+                component={KesfetStack}
+                options={{
+                    tabBarIcon: ({ color }) => {
+                        return (
+                            <Icon name="search1" size={32}></Icon>
+                        )
+                    },
+                    title: 'Keşfet'
+                }}
+            ></Tab.Screen>
+            <Tab.Screen
+                name='TabProfile'
+                component={ProfileStack}
+                options={{
+                    tabBarIcon: ({ color }) => {
+                        return (
+                            <Icon name='user' size={32}></Icon>
+                        )
+                    },
+                    title: 'Profil'
+                }}
+            ></Tab.Screen>
         </Tab.Navigator>
     )
 }

@@ -6,7 +6,7 @@ import ProfileScreen from '../../Screens/ProfileScreen';
 const Stack = createStackNavigator();
 const ProfileStack = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name='Profile' component={ProfileScreen}></Stack.Screen>
         </Stack.Navigator>
     )

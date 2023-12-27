@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/AntDesign'
 import ProfileHeader from '../Components/ProfileHeader'
 
 const ProfileScreen = () => {
+   
     return (
         <View>
             <View style={styles.navbar}>
@@ -26,7 +27,8 @@ const styles = StyleSheet.create({
     navbar: {
         justifyContent: 'space-between',
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding:10
 
     },
     navbarLeft: {
